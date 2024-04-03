@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://gymappdb.database.windows.net:1433;database=GymOwners;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: rohitadmin
+    password: Rohit@2809
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: 
+        dialect: org.hibernate.dialect.SQLServer2016Dialect
+        default-schema: dbo
+        
+server:
+  port: 8080
