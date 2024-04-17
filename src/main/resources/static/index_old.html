@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gym Management App</h1>
+    <form id="memberForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      <label for="membershipType">Membership Type:</label>
+      <select id="membershipType">
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+        <option value="vip">VIP</option>
+      </select>
+      <button type="submit">Add Member</button>
+    </form>
+    <div id="membersList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

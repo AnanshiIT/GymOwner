@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "gym_owner", catalog = "dbo")
@@ -27,6 +27,13 @@ public class GymOwner {
 
 	@Column(name = "mobile_number")
 	private Integer mobileNumber;
+
+	/*
+	 * public Integer getMobileNumber() { return mobileNumber; }
+	 * 
+	 * public void setMobileNumber(Integer mobileNumber) { this.mobileNumber =
+	 * mobileNumber; }
+	 */
 
 	@Column(name = "password")
 	private String password;

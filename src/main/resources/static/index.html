@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Owner Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #292929; /* Dark background color */
+            color: #fff; /* Text color */
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Background color with opacity */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: calc(100% - 22px); /* Adjusted width for input */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333; /* Input text color */
+            background-color: #fff; /* Input background color */
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: #ff5555;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Gym Owner Signup</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="gym_name">Gym Name:</label>
+                <input type="text" id="gym_name" name="gym_name" required>
+            </div>
+            <div class="form-group">
+                <label for="owner_name">Owner Name:</label>
+                <input type="text" id="owner_name" name="owner_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile_no">Mobile No:</label>
+                <input type="tel" id="mobile_no" name="mobile_no" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Signup">
+            </div>
+        </form>
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var jsonData = {};
+            formData.forEach(function(value, key){
+                jsonData[key] = value;
+            });
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://gymxpert.azurewebsites.net/gymXpert/v1/getOwnerDetails', true); // Replace with your API endpoint
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Success response
+                        alert('Signup successful!');
+                        document.getElementById('signupForm').reset(); // Reset form fields
+                    } else {
+                        // Error response
+                        var errorMessage = JSON.parse(xhr.responseText).message;
+                        document.getElementById('errorMessage').innerText = errorMessage;
+                        document.getElementById('errorMessage').style.display = 'block';
+                    }
+                }
+            };
+            xhr.send(JSON.stringify(jsonData));
+        });
+    </script>
+</body>
+</html>
