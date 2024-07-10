@@ -1,0 +1,6 @@
+com\gymowner\controller\GymController.class
+com\gymowner\serviceimpl\GymOwnerServiceImpl.class
+com\gymowner\service\GymOwnerService.class
+com\gymowner\model\GymOwner.class
+com\gymowner\repository\GymOwnerRepository.class
+com\gymowner\Application.class

@@ -25,8 +25,8 @@ public class GymOwner {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "mobile_number")
-	private Integer mobileNumber;
+	@Column(name = "mobilenumber")
+	private String mobileNumber1;
 
 	/*
 	 * public Integer getMobileNumber() { return mobileNumber; }
@@ -41,7 +41,7 @@ public class GymOwner {
 	@Column(name = "city")
 	private String city;
 
-	@Column(name = "state")
+	@Column(name = "owner_state")
 	private String state;
 
 	@Column(name = "owner_name")

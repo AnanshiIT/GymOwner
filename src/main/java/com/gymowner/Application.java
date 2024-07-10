@@ -1,6 +1,6 @@
 package com.gymowner;
 
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+//import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /*
  * This is the main Spring Boot application class. It configures Spring Boot, JPA, Swagger
@@ -20,11 +20,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @Configuration
 @EnableAutoConfiguration  // Sprint Boot Auto Configuration // To segregate MongoDB and JPA repositories. Otherwise not needed.
-@EnableSwagger2
+//@EnableSwagger2
 public class Application extends SpringBootServletInitializer {
 
     private static final Class<Application> applicationClass = Application.class;
-    private static final Logger log = LoggerFactory.getLogger(applicationClass);
+   // private static final Logger log = LoggerFactory.getLogger(applicationClass);
 
 	public static void main(String[] args) {
 		SpringApplication.run(applicationClass, args);

@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://gymappdb.database.windows.net:1433;database=GymOwners;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    username: rohitadmin
-    password: Rohit@2809
+    url: jdbc:sqlserver://anashiit.database.windows.net:1433;database=GymXpert;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: adminanashiit
+    password: rohit@2809
   jpa:
     show-sql: true
     properties:
