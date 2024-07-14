@@ -22,7 +22,7 @@ public class GymOwner {
 
 	@Id
 	@Column(name = "owner_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
 	@Column(name = "mobilenumber")

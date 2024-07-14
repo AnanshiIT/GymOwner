@@ -7,7 +7,7 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        ddl-auto: 
+        ddl-auto: auto
         dialect: org.hibernate.dialect.SQLServer2016Dialect
         default-schema: dbo
         

@@ -7,4 +7,6 @@ import com.gymowner.model.GymOwner;
 public interface GymOwnerService {
 
 	public List<GymOwner> getOwnereDetails();
+	
+	public GymOwner saveOwnerDetails(GymOwner gymOwner);
 }

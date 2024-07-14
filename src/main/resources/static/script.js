@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
   memberForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
+	document.getElementById("submit").addEventListener("click", function() {
+    // Replace with your actual API endpoint
+    const apiUrl = 'http://localhost:8080/gymXpert/v1/getOwnerDetails';
     const name = document.getElementById('name').value;
     const membershipType = document.getElementById('membershipType').value;
 
@@ -14,6 +17,22 @@ document.addEventListener('DOMContentLoaded', function () {
       <strong>Name:</strong> ${name}<br>
       <strong>Membership Type:</strong> ${membershipType}
     `;
+	    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle the data from the API
+            console.log(data);
+            alert('API call successful! Response logged to console.');
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+            alert('Error calling API. See console for details.');
+        });
 
     membersList.appendChild(member);
 

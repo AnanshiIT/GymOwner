@@ -19,7 +19,11 @@ public class GymOwnerServiceImpl implements GymOwnerService {
 	@Override
 	public List<GymOwner> getOwnereDetails() {
 		return gymOwnerRepository.findAll();
+	}
 		
+	@Override
+	public GymOwner saveOwnerDetails(GymOwner gymOwner) {
+		return gymOwnerRepository.save(gymOwner);
 	}
 
 }
